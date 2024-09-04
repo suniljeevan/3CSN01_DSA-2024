@@ -33,9 +33,15 @@ System.out.println(" element at pos "+(i+1)+" "+A[i]);
 		}
 		A[p-1]=e;
 		System.out.println("Element inserted");
-		n=n+1;
-		
+		n=n+1;		
 	}
+	void Delete_from_Array(int p) {
+		for(int i=p-1;i<=n-2;i++) {
+			A[i]=A[i+1];
+		}
+		n=n-1;
+		System.out.println("Element Deleted ");
+		}
 	
 }
 public class TestArrayDS {
@@ -48,6 +54,8 @@ public class TestArrayDS {
         System.out.println(ob.Avg_An_array());
         ob.traverse();
         ob.insert(20, 7);
+        ob.traverse();
+        ob.Delete_from_Array(5);
         ob.traverse();
 	}
 
