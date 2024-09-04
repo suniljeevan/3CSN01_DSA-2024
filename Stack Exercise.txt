@@ -1,0 +1,30 @@
+class Stack {
+	int size=5;
+	int []S = new int[size];
+	int top=-1;
+	void Push(int e) {
+		if(top>=size-1) {
+			System.out.println("Stack Overflow");
+			return;
+		}else {
+			top++;
+			S[top]=e;
+			System.out.println("Element Pushed");
+		}
+	}
+}
+public class TestStackOperation {
+	public static void main(String[] args) {
+         Stack ob=new Stack();
+         ob.Push(10);
+         ob.Push(20);
+         ob.Push(30);
+         ob.Push(40);
+         ob.Push(50);
+         ob.Push(60);
+	}
+
+}
+
+
+
