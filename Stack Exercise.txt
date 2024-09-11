@@ -12,6 +12,16 @@ class Stack {
 			System.out.println("Element Pushed");
 		}
 	}
+	int pop() {
+		if(top==-1) {
+			System.out.println("Stack Underflow");
+			return -1;
+			} else {
+				int popedElement=S[top];
+				top--;
+				return popedElement;
+			}
+	}
 }
 public class TestStackOperation {
 	public static void main(String[] args) {
@@ -22,6 +32,36 @@ public class TestStackOperation {
          ob.Push(40);
          ob.Push(50);
          ob.Push(60);
+         int e=ob.pop();
+         if(e==-1)
+        	 System.out.println("No element popped");
+         else 
+        	 System.out.println("poped element is "+e);
+         e=ob.pop();
+         if(e==-1)
+        	 System.out.println("No element popped");
+         else 
+        	 System.out.println("poped element is "+e);
+         e=ob.pop();
+         if(e==-1)
+        	 System.out.println("No element popped");
+         else 
+        	 System.out.println("poped element is "+e);
+         e=ob.pop();
+         if(e==-1)
+        	 System.out.println("No element popped");
+         else 
+        	 System.out.println("poped element is "+e);
+         e=ob.pop();
+         if(e==-1)
+        	 System.out.println("No element popped");
+         else 
+        	 System.out.println("poped element is "+e);
+         e=ob.pop();
+         if(e==-1)
+        	 System.out.println("No element popped");
+         else 
+        	 System.out.println("poped element is "+e);
 	}
 
 }
