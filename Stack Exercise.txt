@@ -2,8 +2,21 @@ class Stack {
 	int size=5;
 	int []S = new int[size];
 	int top=-1;
+	boolean isFull() {
+		if(top>=size-1)
+			return true;
+		else 
+			return false;
+	}
+	boolean isEmpty() {
+		if(top==-1)
+			return true;
+		else 
+			return false;
+	}
+	
 	void Push(int e) {
-		if(top>=size-1) {
+		if(isFull()) {
 			System.out.println("Stack Overflow");
 			return;
 		}else {
@@ -13,7 +26,7 @@ class Stack {
 		}
 	}
 	int pop() {
-		if(top==-1) {
+		if(isEmpty()) {
 			System.out.println("Stack Underflow");
 			return -1;
 			} else {
