@@ -35,6 +35,15 @@ class Stack {
 				return popedElement;
 			}
 	}
+	void traverse() {
+		if(isEmpty() ) {
+			System.out.println("No element available");
+		}else {
+			for(int i=top;i>=0;i--) {
+				System.out.println(S[i]);
+			}
+		}
+	}
 }
 public class TestStackOperation {
 	public static void main(String[] args) {
@@ -45,6 +54,8 @@ public class TestStackOperation {
          ob.Push(40);
          ob.Push(50);
          ob.Push(60);
+         System.out.println("Elements in Stack");
+         ob.traverse();
          int e=ob.pop();
          if(e==-1)
         	 System.out.println("No element popped");
@@ -60,7 +71,16 @@ public class TestStackOperation {
         	 System.out.println("No element popped");
          else 
         	 System.out.println("poped element is "+e);
+         e=ob.pop();        
+         if(e==-1)
+        	 System.out.println("No element popped");
+         else 
+        	 System.out.println("poped element is "+e);
+         
+         System.out.println("Elements in Stack");
+         ob.traverse();
          e=ob.pop();
+         
          if(e==-1)
         	 System.out.println("No element popped");
          else 
@@ -70,11 +90,8 @@ public class TestStackOperation {
         	 System.out.println("No element popped");
          else 
         	 System.out.println("poped element is "+e);
-         e=ob.pop();
-         if(e==-1)
-        	 System.out.println("No element popped");
-         else 
-        	 System.out.println("poped element is "+e);
+         System.out.println("Elements in Stack");
+         ob.traverse();
 	}
 
 }
