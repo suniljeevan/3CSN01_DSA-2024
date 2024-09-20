@@ -1,8 +1,15 @@
 package SECOND;
 class Stack {
 	int size=5;
-	char[] S=new char[size];
+	char[] S;
 	int top=-1;
+	Stack() {
+		S=new char[size];
+	}
+	Stack(int s) {
+		size=s;
+		S=new char[size];
+	}
 	boolean isFull() {
 		if(top>=size-1)
 			return true;
@@ -45,10 +52,13 @@ class Stack {
 }
 }
 public class TESTCHARACTERSTACK {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+          Stack ob = new Stack();
+          ob.Push('a');
+          ob.Push('b');
+          ob.Push('c');
+          System.out.println("Elements in S");
+          ob.traverse();
 	}
 
 }
