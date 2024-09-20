@@ -1,0 +1,54 @@
+package SECOND;
+class Stack {
+	int size=5;
+	char[] S=new char[size];
+	int top=-1;
+	boolean isFull() {
+		if(top>=size-1)
+			return true;
+		else 
+			return false;
+	}
+	boolean isEmpty() {
+		if(top==-1)
+			return true;
+		else
+			return false;
+	}
+	void Push(char c) {
+		if(isFull()) {
+			System.out.println("Stack Overflow");
+			return;
+		}else {
+			S[++top]=c;
+			System.out.println("Element Pushed");
+		}
+	}
+		char pop() {
+			if(isEmpty()) {
+				System.out.println("Stack Underflow");
+				return '\0';
+			}else {
+				char popedelement=S[top];
+				top--;
+				return popedelement;
+			}
+		}
+		void traverse() {
+			if(isEmpty() ) {
+				System.out.println("No element available");
+			}else {
+				for(int i=top;i>=0;i--) {
+					System.out.println(S[i]);
+				}
+			}	
+}
+}
+public class TESTCHARACTERSTACK {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
