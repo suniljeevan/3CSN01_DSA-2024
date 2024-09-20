@@ -59,6 +59,20 @@ public class TESTCHARACTERSTACK {
           ob.Push('c');
           System.out.println("Elements in S");
           ob.traverse();
+          ob.Push('d');
+          ob.Push('e');
+          System.out.println("Elements in S");
+          ob.traverse();
+          ob.Push('f');
+          System.out.println("Elements in S");
+          ob.traverse();
+          char e=ob.pop();
+          if(e=='\0')
+        	  System.out.println("No element popped");
+          else 
+         	 System.out.println("poped element is "+e);
+          System.out.println("Elements in S");
+          ob.traverse();
 	}
 
 }
