@@ -1,0 +1,53 @@
+class LQueue {
+	int size;
+	int[] Q;
+	int f=-1,r=-1;
+	LQueue() {
+		size=5;
+		Q=new int[size];
+	}
+	LQueue(int anysize) {
+		size=anysize;
+		Q=new int[size];
+	}
+	boolean isFull() {
+		if(r==size-1)
+			return true;
+		else 
+			return false;
+	}
+	boolean isEmpty() {
+		if(f==-1)
+			return true;
+		else 
+			return false;
+	}
+	void enqueue(int e) {
+		if(isFull()) {
+			System.out.println("Queue Overflow");
+		}else {
+			if(f==-1)
+				f=0;
+			r=r+1;
+			Q[r]=e;
+			System.out.println("Inserted");
+		}
+	}
+	int dequeue() {
+		return -1;
+	}
+}
+public class TESTLQ {
+
+	public static void main(String[] args) {
+		LQueue Q=new LQueue();
+		Q.enqueue(10);
+		Q.enqueue(20);
+		Q.enqueue(30);
+		Q.enqueue(40);
+		Q.enqueue(50);
+		Q.enqueue(60);
+
+	}
+
+}
