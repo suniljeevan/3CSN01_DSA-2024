@@ -79,8 +79,13 @@ public class CQTest {
 		CQ ob=new CQ(3);
 		ob.enqueue(10);
 		ob.enqueue(20);
+		ob.traverse();
+		System.out.println("Deleted Element is "+ob.dequeue());
+		ob.traverse();
 		ob.enqueue(30);
-		ob.enqueue(40);
+		ob.traverse();
+		System.out.println("Deleted Element is "+ob.dequeue());
+		ob.traverse();
 	}
 
 }
