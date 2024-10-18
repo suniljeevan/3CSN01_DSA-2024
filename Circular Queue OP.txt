@@ -4,12 +4,14 @@ class CQ {
 	int n;
 	public CQ() {
 		size=5;
-		f=r=-1;
+		cq=new int[size];
+		f=0;r=-1;
 		n=0;
 	}
 	public CQ(int s) {
 		size=s;
-		f=r=-1;
+		cq=new int[size];
+		f=0;r=-1;
 		n=0;
 	}
 	public void enqueue(int e) {
@@ -23,6 +25,7 @@ class CQ {
 			r=(r+1)%size;
 		}
 		cq[r]=e;
+		System.out.println("Inserted");
 		n=n+1;
 	}
 	public int dequeue() {
@@ -43,12 +46,12 @@ class CQ {
 		
 	}
 	public boolean isFull() {
-		if(f==r)
+		if(n>=size)
 		return true;
 		else return false;
 	}
 	public boolean isEmpty() {
-		if(f==-1 & r==-1)
+		if(n==0)
 		return true;
 		else return false;
 	}
@@ -73,7 +76,11 @@ class CQ {
 public class CQTest {
 
 	public static void main(String[] args) {
-
+		CQ ob=new CQ(3);
+		ob.enqueue(10);
+		ob.enqueue(20);
+		ob.enqueue(30);
+		ob.enqueue(40);
 	}
 
 }
