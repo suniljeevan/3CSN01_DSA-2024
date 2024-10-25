@@ -72,5 +72,29 @@ public class LinearList {
           return temp.data;
       }
    }  
-    
+ public int deleteFromEnd() {
+	 Node cp=Head,pp=Head;
+	 if(Head==null)
+	    {
+	        System.out.println("Empty linked list");
+	        return -1;
+	    }else {
+	    	if(cp.next==null) {
+	    		Head=null;
+	    		return cp.data;
+	    	}else {
+	    		while (cp.next!=null) {
+	    			pp=cp;
+	    			cp=cp.next;
+	    		}
+	    		pp.next=null;
+	    		return pp.data;
+	    	}
+	    }
+ }
+   
+   
+   
+   
+   
 }
