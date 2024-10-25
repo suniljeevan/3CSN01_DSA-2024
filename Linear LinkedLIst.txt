@@ -1,0 +1,44 @@
+package mypackage;
+public class Node {
+	int data;
+	Node next;
+	//alt shift S
+	//default constructor
+	public Node() {
+	}
+	//parameterized constructor
+	public Node(int data, Node next) {
+		this.data = data;
+		this.next = next;
+	}
+	
+	
+}
+
+
+package mypackage;
+public class LinearList {
+    Node Head=null;
+    public void insertAtEnd(int d) {
+    	Node nn=new Node(d,null);
+    	if(Head==null) {
+    		Head=nn;
+    	}else {
+    		Node temp=Head;
+    		while(temp.next!=null) {
+    			temp=temp.next;
+    		}
+    		temp.next=nn;
+    	}
+    	System.out.println("inserted at last");
+    }
+   public void inserAtBeg(int d) {
+	   Node nn=new Node(d,null);
+	   nn.next=Head;
+	   Head=nn;
+	  System.out.println("inserted at beginning"); 
+   }
+    
+    
+    
+}
