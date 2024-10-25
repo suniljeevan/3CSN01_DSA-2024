@@ -32,13 +32,31 @@ public class LinearList {
     	}
     	System.out.println("inserted at last");
     }
-   public void inserAtBeg(int d) {
+   public void insertAtBeg(int d) {
 	   Node nn=new Node(d,null);
 	   nn.next=Head;
 	   Head=nn;
 	  System.out.println("inserted at beginning"); 
    }
-    
+   public void insertAtPos(int d, int p) { 
+	   Node temp=Head;
+	   Node nn=new Node(d,null);
+	   if(p==1) {
+		   insertAtBeg(d);
+	   }else {
+	   if(Head==null && p>1) {
+		   System.out.println("Not possible");
+	   } else {
+		   int i=1;
+		   while(i!=p-1) {
+			   temp=temp.next;
+		   }
+		   nn.next=temp.next;
+		   temp.next=nn;
+		   System.out.println("Inserted at pos");
+	   }
+	   }
+   }
     
     
 }
