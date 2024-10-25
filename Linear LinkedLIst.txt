@@ -98,3 +98,55 @@ public class LinearList {
    
    
 }
+
+
+
+
+
+
+
+-----------------------------------------------
+package mypackage;
+
+import java.util.Scanner;
+
+public class TestLinearListOperation {
+	public static void main(String[] args) {
+        LinearList ob=new LinearList();
+        int choice=0;
+        Scanner scanner=new Scanner(System.in);
+        int data=0;
+        int pos,bNodeData,aNodeData;
+        while(choice<8)
+        {
+            System.out.println("1.Traverse 2.Insert-End 3.Insert-Beg 4.Insert-pos 5.Delete-Beg 6.Delete-End 7.Exit ");
+            choice=scanner.nextInt();
+            switch(choice)
+            {
+                case 1:ob.traverse();break;
+                case 2:System.out.println("Data:");
+                        data=scanner.nextInt();
+                        ob.insertAtEnd(data);
+                        break;
+                case 3:System.out.println("Data:");
+                        data=scanner.nextInt();
+                        ob.insertAtBeg(data);
+                        break;
+                case 4:System.out.println("Pos:");
+                        pos=scanner.nextInt();
+                        System.out.println("Data:");
+                        data=scanner.nextInt();
+                        ob.insertAtPos(data,pos);
+                        break;
+                               
+                case 5:System.out.println("Deleted node:"+ob.deleteFromBeg());
+                        break;
+                case 6:System.out.println("Deleted node:"+ob.deleteFromEnd());
+                        break;
+                case 7: System.out.println("Exited");
+                        break;
+                        
+            }
+        }
+    }
+}
