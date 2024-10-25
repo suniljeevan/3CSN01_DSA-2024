@@ -94,7 +94,17 @@ public class LinearList {
  }
    
    
-   
+  public void traverse() {  
+	 if(Head==null) {
+		 System.out.println("Empty");
+	 }else {
+		 Node temp=Head;
+		 while(temp!=null) {
+			 System.out.print(temp.data+"->");
+			 temp=temp.next;
+		 }
+	 }
+ } 
    
    
 }
