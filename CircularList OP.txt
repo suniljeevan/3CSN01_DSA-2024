@@ -1,0 +1,167 @@
+package MYPACKAGE;
+public class Node {
+	int data;
+	Node next;
+	Node() {
+		data=0;
+		next=null;
+	}
+	Node(int d) {
+		data=d;
+		next=null;
+	}
+
+}
+
+--------------------------------
+
+package MYPACKAGE;
+public class CircularList { 
+	private Node head;
+	CircularList() {
+		head=null;
+	}
+	void traverse() {
+		Node temp=head;
+		if(head==null)
+			System.out.println("Empty List");
+		else {
+		do {
+			System.out.println(temp.data);
+			temp=temp.next;
+		}while(temp!=head);
+	}
+	}
+   void insert_at_beg(int d) {
+	   Node nn=new Node(d);
+	   if(head==null) {
+		   head=nn;
+		   nn.next=head;
+	   }else {
+		   Node temp=head;
+		   nn.next=head;
+		   head=nn;	   
+	   }
+	   System.out.println("Inserted at beg");
+   }
+  void insert_at_last(int d) {
+	  Node nn=new Node(d);
+	  if(head==null) {
+		  head=nn;
+		  nn.next=head;
+	  }else {
+		 Node temp=head;
+		 while(temp.next!=head) {
+			 temp=temp.next;
+		 }
+		 temp.next=nn;
+		 nn.next=head;
+	  }
+	  System.out.println("Inserted at last");
+  }
+   void insert_at_pos(int d, int p) {	
+	   Node nn=new Node(d);
+	   if(p==1) 
+		   insert_at_beg(d);
+	   else {
+		   Node temp=head;
+		   int i=1;
+		   while(i!=p-1) {
+			   temp=temp.next;
+			   i=i+1;
+		   }
+		   nn.next=temp.next;
+		   temp.next=nn;
+	   }
+	   System.out.println("Inserted at pos");
+   }
+   void del_at_beg() {
+	   int d=-1;
+	   if(head==null) {
+		  System.out.println("Empty List");   
+	   } else {
+		 d=head.data;
+		 head=head.next;
+	   System.out.println("Deleted data beg"+d);
+	   }
+	   }
+	 void del_from_end() {  
+		 int d=-1;
+		 if(head==null) {
+			  System.out.println("Empty List");   
+		   }else {
+			Node cp=head;
+			Node pp=null;
+			while(cp.next!=head) {
+				pp=cp;
+				cp=cp.next;
+			}
+			d=cp.data;
+			pp.next=head;
+		 System.out.println("Deleted data end"+d);
+		   }
+   }
+   void del_from_pos(int p) {
+	   int d=-1;
+	   if(head==null) {
+		   System.out.println("Empty List");
+	   }else {
+		   int i=1;
+		   Node temp=head;
+		   while(i!=p-1) {
+			   temp=temp.next;
+			   i=i+1;
+		   }
+		   Node temp2=temp.next;
+		   d=temp2.data;
+		   temp.next=temp2.next;
+		   System.out.println("data deleted pos"+d);
+	   }
+   }
+   void search(int d) {
+	   Node sn=new Node(d);
+	   Node temp=head;
+	   boolean found=false;
+	   while(temp.next!=head) {
+		   if(temp.data==sn.data) {
+			   found=true;
+			   break;
+		   }
+		   temp=temp.next;
+	   }
+	   if(found==true)
+		   System.out.println("found");
+	   else
+		   System.out.println("not found");
+	   
+   }
+}
+
+
+--------------------------------------------
+package MYPACKAGE;
+public class TestCircularListOperation {
+	public static void main(String[] args) {
+		CircularList ob=new CircularList();
+		ob.traverse();
+		ob.insert_at_beg(10);
+		ob.traverse();
+		ob.insert_at_last(20);
+		ob.traverse();
+		ob.insert_at_last(30);
+		ob.traverse();
+		ob.insert_at_last(40);
+		ob.traverse();
+		ob.insert_at_last(50);
+		ob.traverse();
+		ob.insert_at_pos(100,3);
+		ob.traverse();
+		ob.search(30);
+		ob.search(200);
+		
+	}
+
+}
+
+
+
