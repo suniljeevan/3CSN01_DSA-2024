@@ -97,8 +97,32 @@ public class DLinkedList {
    System.out.println("Inserted at pos "+p);    
         
     } 
-     
-}
+ void del_from_beg() {
+	   if(head==null) {
+		   System.out.println("Empty");
+		   return;
+	   }
+	   System.out.println("Deleted node "+
+	   head.data);
+	   head=head.next;
+	   head.prev=null;
+   }
+   void del_from_last() {
+	   if(head==null) {
+		   System.out.println("Empty");
+		   return;
+	   }
+	   Node cp=head,pp=null;
+	   while(cp.next!=null) {
+		   pp=cp;
+		   cp=cp.next;
+	   }
+	 System.out.println("Deleted lastnode "+
+			   cp.data);
+	   cp.prev=null;
+	   pp.next=null;
+	    }
+  }
 
 
 
