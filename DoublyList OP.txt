@@ -76,7 +76,27 @@ public class DLinkedList {
    	 }
    	 System.out.println("Inserted at last");
     }
-     
+      void insert_at_pos(int d,int p)
+    {
+    	 Node nn=new Node(d);
+        if(p==1||head==null)
+        {
+            insert_at_beg(d);
+        }else {
+        	int i=1;
+        	Node cp=head;
+        	while(i!=p-1) {
+        		cp=cp.next;
+        		i=i+1;
+        	}
+        	nn.next=cp.next;
+        	cp.next.prev=nn;
+        	nn.prev=cp;
+        	cp.next=nn;
+        }
+   System.out.println("Inserted at pos "+p);    
+        
+    } 
      
 }
 
